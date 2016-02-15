@@ -9,7 +9,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the groundbreaking ' + chalk.red('generator-aiport') + ' generator!'
+      'Welcome to the ' + chalk.red('generator-aiport') + ' generator!'
     ));
 
     var prompts = [{
@@ -18,6 +18,9 @@ module.exports = yeoman.generators.Base.extend({
       message: 'Would you like to enable this option?',
       default: true
     }];
+
+    // TODO: options & args
+    this.composeWith('meanjs', { options: {}, args: [] });
 
     this.prompt(prompts, function (props) {
       this.props = props;
